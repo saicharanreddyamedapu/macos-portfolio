@@ -1,0 +1,45 @@
+const { chromium } = require('playwright')
+const fs = require('fs')
+const path = require('path')
+
+const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:5173'
+const output = path.join(process.cwd(), 'docs', 'screenshots')
+
+async function capture() {
+  fs.mkdirSync(output, { recursive: true })
+  const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_BROWSER_PATH ? { executablePath: process.env.PLAYWRIGHT_BROWSER_PATH } : {}) })
+  try {
+    const desktop = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 })
+    const page = await desktop.newPage()
+    await page.goto(base, { waitUntil: 'networkidle' })
+    await page.locator('#portfolio-boot').waitFor({ state: 'detached' })
+    await page.screenshot({ path: path.join(output, 'desktop.png') })
+    await page.getByRole('button', { name: 'Open Finder' }).click()
+    await page.waitForTimeout(300)
+    await page.mouse.move(1400, 40)
+    await page.screenshot({ path: path.join(output, 'finder.png') })
+    await page.getByRole('dialog', { name: 'Finder' }).getByRole('button', { name: 'Close Finder' }).click()
+    await page.getByRole('navigation', { name: 'Main' }).getByRole('button', { name: 'Projects' }).click()
+    await page.waitForTimeout(300)
+    await page.mouse.move(1400, 40)
+    await page.screenshot({ path: path.join(output, 'projects.png') })
+    await page.getByRole('dialog', { name: 'Projects' }).getByRole('button', { name: 'Close Projects' }).click()
+    await page.getByRole('button', { name: 'Open Skills Terminal' }).click()
+    const terminal = page.getByRole('dialog', { name: 'Skills Terminal' })
+    await terminal.locator('#command').fill('help')
+    await terminal.locator('#command').press('Enter')
+    await page.waitForTimeout(300)
+    await page.mouse.move(1400, 40)
+    await page.screenshot({ path: path.join(output, 'terminal.png') })
+    await desktop.close()
+
+    const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, deviceScaleFactor: 1 })
+    const phone = await mobile.newPage()
+    await phone.goto(base, { waitUntil: 'networkidle' })
+    await phone.locator('#portfolio-boot').waitFor({ state: 'detached' })
+    await phone.screenshot({ path: path.join(output, 'mobile.png') })
+    await mobile.close()
+    console.log('Captured desktop, Finder, Projects, Terminal, and mobile screenshots.')
+  } finally { await browser.close() }
+}
+capture().catch(error => { console.error(error); process.exitCode = 1 })

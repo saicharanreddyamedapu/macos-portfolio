@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.vercel/
+coverage/
+.cache/
+qa/
+
+# Source handoff materials are kept locally; the app assets live in public/.
+/*.pdf
+/*.jpeg
+/ASSET_MANIFEST.md
+/CODEX_IMPLEMENTATION_BRIEF.md
+/DESIGN_SYSTEM.md
+/IMPLEMENTATION_CHECKLIST.md
+/PORTFOLIO_DATA.json
+/REFERENCE_AUDIT.md
+/VERIFICATION_REPORT.md

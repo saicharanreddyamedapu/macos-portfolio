@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceOfTruth": {
+    "resumes": [
+      "AI&Development_resume.pdf",
+      "AI_Resume.pdf",
+      "Development_resume.pdf"
+    ],
+    "notes": "Values are consolidated only from the three named resumes. null means the resumes did not provide a value."
+  },
+  "personal": {
+    "name": "Sai Charan Reddy",
+    "positioning": "AI/ML & Full-Stack Developer",
+    "email": "saicharanreddyamedapu4@gmail.com",
+    "location": null,
+    "photo": {
+      "publicPath": "/images/sai-charan-reddy.jpeg",
+      "alt": "Portrait of Sai Charan Reddy",
+      "width": 1170,
+      "height": 1270
+    },
+    "professionalSummary": "Computer Science student specializing in Artificial Intelligence, combining software engineering with AI application development. Experienced in Java, Spring Boot, React, Python, FastAPI, LLMs, RAG, hybrid retrieval, multi-agent workflows, REST APIs, databases, and cloud deployment; focused on scalable, reliable applications and strong problem-solving fundamentals."
+  },
+  "profiles": {
+    "linkedin": "https://www.linkedin.com/in/sai-charan-reddy-amedapu-6b6924291/",
+    "github": "https://github.com/saicharanreddyamedapu",
+    "leetcode": "https://leetcode.com/u/saicharanreddy01/"
+  },
+  "education": [
+    {
+      "institution": "Bennett University",
+      "location": "Greater Noida",
+      "degree": "Bachelor of Technology in Computer Science",
+      "specialization": "Artificial Intelligence",
+      "start": "2023-09",
+      "end": null,
+      "status": "Present"
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "Java", "JavaScript"],
+    "frontend": ["React", "HTML", "CSS", "Vite"],
+    "backendAndApis": ["Spring Boot", "Spring Security", "FastAPI", "REST APIs", "JPA/Hibernate", "JDBC", "Servlets", "JWT Authentication"],
+    "aiMl": ["Machine Learning", "Deep Learning", "NLP", "Generative AI", "LLMs", "RAG", "Prompt Engineering", "Transformers", "Embeddings", "Hybrid Search", "Multi-Agent Systems", "Feature Engineering", "Hyperparameter Tuning", "Model Development & Deployment"],
+    "aiLibrariesAndPlatforms": ["PyTorch", "LangChain", "LangGraph", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Gemini", "Ollama", "BAAI/bge-base-en-v1.5", "SPLADE++", "LangSmith", "n8n", "Antigravity"],
+    "databases": ["PostgreSQL", "MongoDB", "MySQL", "Qdrant"],
+    "cloudAndInfrastructure": ["AWS EC2", "AWS S3", "AWS EBS", "AWS IAM", "AWS VPC", "AWS CloudWatch", "AWS SNS", "Docker", "Linux"],
+    "developerTools": ["Git", "GitHub", "Maven", "Eclipse", "Selenium"],
+    "coreConcepts": ["Data Structures & Algorithms", "Object-Oriented Programming", "Design Patterns", "Multithreading"]
+  },
+  "certifications": [
+    {"name": "Foundations of Deep Learning: Concepts and Applications", "url": "https://nptel.ac.in/noc/E_Certificate/NOC26CS01S95620447704494608"},
+    {"name": "Data Structures", "url": "https://www.coursera.org/account/accomplishments/verify/Q9CAHXYIR3Y2"},
+    {"name": "AI Workflow: Data Analysis and Hypothesis Testing", "url": "https://www.coursera.org/account/accomplishments/verify/BPBOS2U4WB05"},
+    {"name": "Database Management Essentials", "url": "https://www.coursera.org/account/accomplishments/verify/Q6S1IYLNN78C"}
+  ],
+  "projects": [
+    {
+      "id": "hirely",
+      "title": "Hirely",
+      "subtitle": "Full-Stack Job Platform",
+      "category": "Full-Stack Development",
+      "date": "2026 - Present",
+      "technologies": ["Java", "Spring Boot", "React", "PostgreSQL", "AWS", "JPA/Hibernate", "MapStruct"],
+      "description": "A full-stack job platform for Candidate, Company, and Hiring Manager roles.",
+      "features": ["Layered Spring Boot architecture", "MapStruct compile-time entity-to-DTO mapping", "Stateless JWT authentication and BCrypt password hashing", "Role-based authorization with a Factory-pattern UserDetailsService for multi-role login", "Job postings, applications with status-stage tracking, skills, and company reviews", "Asynchronous email notifications", "Resume uploads with Apache Tika MIME-type validation"],
+      "architecture": ["Spring Boot, Spring Data JPA, Hibernate, and PostgreSQL", "HikariCP connection pooling", "Backend deployed on AWS EC2", "React frontend deployed on Vercel"],
+      "metrics": [],
+      "repositoryUrl": "https://github.com/saicharanreddyamedapu/Hirely",
+      "liveDemoUrl": "https://hireyou-opal.vercel.app",
+      "image": null
+    },
+    {
+      "id": "skilllens",
+      "title": "SkillLens",
+      "subtitle": "AI Resume Screening",
+      "category": "AI / Machine Learning",
+      "date": "2026 - Present",
+      "technologies": ["Python", "FastAPI", "Gemini", "Qdrant", "BAAI/bge-base-en-v1.5", "SPLADE++"],
+      "description": "An AI-powered resume-screening pipeline that uses hybrid retrieval to surface relevant candidates beyond keyword matching.",
+      "features": ["Dense BAAI/bge-base-en-v1.5 and sparse SPLADE++ embeddings", "Resume-level ranking from the average of each resume's top-three chunk similarity scores", "Gemini query enhancement", "Automatic inference of requested result counts from user phrasing"],
+      "architecture": ["FastAPI service", "Hybrid dense and sparse retrieval", "Qdrant vector database"],
+      "metrics": ["Uses top-three chunk similarity scores to reduce long-document score dilution"],
+      "repositoryUrl": "https://github.com/saicharanreddyamedapu/SkillLens",
+      "liveDemoUrl": null,
+      "image": null
+    },
+    {
+      "id": "float-chat",
+      "title": "Float Chat",
+      "subtitle": "Multi-Agent Oceanographic Data Retrieval",
+      "category": "AI / Machine Learning",
+      "date": "2025",
+      "technologies": ["Python", "LangGraph", "Gemini", "MongoDB", "PostgreSQL"],
+      "description": "An oceanographic data retrieval system that routes natural-language questions to geospatial, metadata, or structured float-profile retrieval.",
+      "features": ["Three-agent LangGraph workflow: Decomposition, Filter, and SQL", "MongoDB geospatial and metadata filtering", "PostgreSQL structured oceanographic float-profile queries", "Retrieval method selected by data type rather than semantic similarity alone"],
+      "architecture": ["LangGraph orchestration", "MongoDB for spatial and metadata queries", "PostgreSQL for structured profile data"],
+      "metrics": [],
+      "repositoryUrl": "https://github.com/saicharanreddyamedapu/Float_Chat",
+      "liveDemoUrl": null,
+      "image": null
+    },
+    {
+      "id": "gpt2-from-scratch",
+      "title": "GPT-2 Implementation from Scratch",
+      "subtitle": "Transformer Language Model",
+      "category": "AI / Machine Learning",
+      "date": "2025",
+      "technologies": ["Python", "PyTorch", "Transformers", "FineWeb"],
+      "description": "A from-scratch GPT-2 implementation and training workflow in PyTorch.",
+      "features": ["Token and positional embeddings", "Causal masked multi-head self-attention", "Pre-norm transformer blocks and residual connections", "KV-cache with separate prefill and decode passes", "Cosine learning-rate decay, gradient accumulation, and bfloat16 mixed precision"],
+      "architecture": ["Autoregressive transformer training and inference implementation"],
+      "metrics": ["Validation loss: 2.77"],
+      "repositoryUrl": "https://github.com/saicharanreddyamedapu/GPT2",
+      "liveDemoUrl": null,
+      "image": null
+    },
+    {
+      "id": "task-tracker",
+      "title": "Task Tracker",
+      "subtitle": "Full-Stack Task Management",
+      "category": "Full-Stack Development",
+      "date": "2026-04",
+      "technologies": ["Java", "Spring Boot 3", "React", "Vite", "PostgreSQL", "Spring Security", "Spring Data JPA"],
+      "description": "A full-stack task management application with persistent task ownership and per-user workflows.",
+      "features": ["Registration and login", "Spring Security authentication", "User-task JPA relationships", "RESTful CRUD APIs", "User-specific retrieval, deadline tracking, and completion-status management"],
+      "architecture": ["Spring Boot 3 REST API", "React/Vite frontend", "PostgreSQL persistence"],
+      "metrics": [],
+      "repositoryUrl": "https://github.com/saicharanreddyamedapu/Task_Tracker",
+      "liveDemoUrl": null,
+      "image": null
+    },
+    {
+      "id": "parking-lot-system",
+      "title": "Parking Lot System",
+      "subtitle": "Low-Level Design",
+      "category": "Java / System Design",
+      "date": "2026-03",
+      "technologies": ["Java", "OOP", "Design Patterns", "Multithreading"],
+      "description": "An object-oriented parking lot system for multiple floors and vehicle types.",
+      "features": ["Bikes, cars, and trucks", "Strategy pattern for flexible pricing", "Factory pattern for object creation", "Singleton centralized parking-lot management", "UPI, card, and cash payment methods", "Concurrent entry and exit simulation", "Ticket generation and fare calculation with configurable pricing strategies"],
+      "architecture": ["Java low-level design with Strategy, Factory, and Singleton patterns"],
+      "metrics": [],
+      "repositoryUrl": "https://github.com/saicharanreddyamedapu/LLD",
+      "liveDemoUrl": null,
+      "image": null
+    }
+  ],
+  "resumes": [
+    {"id": "ai-fullstack", "label": "AI & Full-Stack Resume", "filename": "AI&Development_resume.pdf", "publicPath": "/resumes/AI&Development_resume.pdf"},
+    {"id": "ai-ml", "label": "AI / ML Resume", "filename": "AI_Resume.pdf", "publicPath": "/resumes/AI_Resume.pdf"},
+    {"id": "software-development", "label": "Software Development Resume", "filename": "Development_resume.pdf", "publicPath": "/resumes/Development_resume.pdf"}
+  ]
+}

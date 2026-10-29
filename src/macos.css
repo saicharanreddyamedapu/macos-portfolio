@@ -1,0 +1,40 @@
+/* Local, original interface icons and the two supplied wallpapers. */
+.desktop-shell,.mobile-shell{isolation:isolate;background:var(--canvas)}
+.desktop-shell::before,.mobile-shell::before{content:none}
+.wallpaper{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.wallpaper::before,.wallpaper::after{content:"";position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;transition:opacity .35s ease}
+.wallpaper::before{background-image:url('/wallpapers/light.webp');opacity:1}
+.wallpaper::after{background-image:url('/wallpapers/dark.png');opacity:0}
+:root[data-theme="dark"] .wallpaper::after{opacity:1}
+@media(prefers-color-scheme:dark){:root[data-theme="system"] .wallpaper::after{opacity:1}}
+.topbar{background:color-mix(in srgb,var(--solid) 78%,transparent);backdrop-filter:blur(22px) saturate(150%)}
+.apple-mark{display:block;flex:none;width:16px;height:19px;background:currentColor;mask:url('/icons/apple-mark.svg') center/contain no-repeat;-webkit-mask:url('/icons/apple-mark.svg') center/contain no-repeat}
+.brand-button{gap:14px}
+.topbar-right{font-family:'DM Sans',sans-serif;white-space:nowrap}
+.desktop-icons button{color:#fff;text-shadow:0 1px 3px #000,0 1px 7px #000;font-weight:600}
+.desktop-icons .desktop-icon-art{width:74px;height:62px;border:0;border-radius:0;box-shadow:none;background:none;object-fit:contain;filter:drop-shadow(0 3px 3px #0004)}
+.desktop-credit{color:#fff;text-shadow:0 1px 4px #000;opacity:.8}
+.dock{gap:5px;padding:6px 10px 10px;border-radius:19px;background:color-mix(in srgb,var(--solid) 65%,transparent);border:1px solid color-mix(in srgb,var(--solid) 80%,transparent);box-shadow:0 12px 36px #0004;backdrop-filter:blur(25px) saturate(170%)}
+.dock .dock-item{width:49px;height:49px;border-radius:0;padding:0;background:transparent;box-shadow:none}
+.dock .dock-item .app-icon{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 2px #0003)}
+.dock .dock-trash .app-icon{width:50px;height:50px}
+.dock-divider{align-self:center;width:1px;height:40px;background:color-mix(in srgb,var(--ink) 25%,transparent);margin:0 3px}
+.dock-item i{bottom:-7px;background:var(--ink)}
+.finder-item-icon.folder{background:none;width:70px;height:58px;border-radius:0}
+.finder-item-icon.folder .app-icon{width:100%;height:100%;object-fit:contain}
+.trash-app{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px}
+.trash-app .trash-empty-icon{width:100px;height:100px;opacity:.8}
+.trash-app h2{font-size:22px;letter-spacing:-.03em;margin:14px 0 5px}
+.trash-app p{font-size:13px;margin:0}
+@media(max-width:767px){
+ .mobile-shell{background:var(--canvas)}
+ .mobile-status,.mobile-greeting,.mobile-icon-grid{position:relative;z-index:1}
+ .mobile-status,.mobile-greeting{color:var(--ink)}
+ .mobile-icon-grid .mobile-app-icon{width:60px;height:60px;object-fit:contain;background:none;border-radius:0;box-shadow:none;filter:drop-shadow(0 4px 4px #0004)}
+ .mobile-icon-grid small{color:#fff;text-shadow:0 1px 3px #000,0 1px 7px #000;font-weight:600}
+ .mobile-bottom-dock{background:color-mix(in srgb,var(--solid) 68%,transparent);border-color:color-mix(in srgb,var(--solid) 80%,transparent)}
+ .mobile-bottom-dock button{background:none;border-radius:0;padding:0}
+ .mobile-bottom-dock .app-icon{width:47px;height:47px;object-fit:contain;filter:drop-shadow(0 2px 2px #0003)}
+}
+@media(prefers-reduced-motion:reduce){.wallpaper::before,.wallpaper::after{transition:none!important}}
+@media(min-width:1024px){.desktop-shell > .hero{transform:scale(.95);transform-origin:center}}
