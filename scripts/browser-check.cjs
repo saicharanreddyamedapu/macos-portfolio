@@ -195,6 +195,10 @@ async function main() {
   await clockPage.goto(base, { waitUntil: 'domcontentloaded' })
   const beforeMidnight = await clockPage.locator('.topbar time').innerText()
   await clockPage.clock.fastForward('00:00:03')
+  await clockPage.waitForFunction(previous => {
+    const current = document.querySelector('.topbar time')?.innerText
+    return current && current !== previous && current.includes('30')
+  }, beforeMidnight)
   const afterMidnight = await clockPage.locator('.topbar time').innerText()
   if (beforeMidnight === afterMidnight || !afterMidnight.includes('30')) throw Error('Clock did not update across midnight')
   await clockContext.close()

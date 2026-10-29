@@ -2,7 +2,7 @@
 
 An interactive portfolio for an AI/ML and full-stack developer. It presents projects, skills, education, credentials, and tailored resumes in a macOS-inspired desktop, with an iOS-inspired interface on mobile.
 
-**Live demo:** Deployment pending verification.
+**Live demo:** [saicharan-portfolio-psi.vercel.app](https://saicharan-portfolio-psi.vercel.app/)
 
 ![Desktop view of the portfolio](docs/screenshots/desktop.png)
 
@@ -101,11 +101,11 @@ npm run test:startup
 npm run test:browser
 ```
 
-Set `PORTFOLIO_TEST_URL` to test a different local server. An installed Edge or Chrome executable can be selected with `PLAYWRIGHT_BROWSER_PATH`.
+Set `PORTFOLIO_TEST_URL` to test another deployment. An installed Edge or Chrome executable can be selected with `PLAYWRIGHT_BROWSER_PATH`.
 
 ## Deployment
 
-The project is a static Vite application. For Vercel, use the Vite framework preset, `npm run build` as the build command, and `dist` as the output directory. It does not require environment variables or a backend. GitHub connection and production deployment are pending verification.
+The project is a static Vite application connected to Vercel through its GitHub repository. Vercel uses the Vite framework preset, `npm run build` as the build command, and `dist` as the output directory. The `main` branch is the production branch. The application does not require environment variables or a backend.
 
 ## Customize
 
